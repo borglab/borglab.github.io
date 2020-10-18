@@ -11,6 +11,7 @@ email: frank@dellaert.com
 description: > # this means to ignore newlines until "baseurl:"
   The Borglab is a robotics and computer vision lab at Georgia Tech.
 baseurl: ""
+# Remove all content in url when pushing to borglab.github.io/. Replace with "". The current url is placed to preserve formatting in published website. (css and js otherwise have relative paths that lose formatting when site is published)
 url: ""
 
 include:
@@ -27,7 +28,8 @@ lsi: false
 excerpt_separator: "\n\n"
 incremental: false
 
-
+# Plugins
+plugins: ['jekyll-twitter-plugin']
 
 # Markdown Processing
 kramdown:
@@ -41,3 +43,7 @@ kramdown:
   enable_coderay: false
   parse_block_html: true # default for kramdown is false. This will enable using Markdown links
 
+exclude:
+  - Rakefile
+  - Gemfile
+  - Gemfile.lock
